@@ -60,7 +60,7 @@ jobs:
         username: ${{ secrets.ORACLE_USER }}
         key: ${{ secrets.ORACLE_KEY }}
         source: "docker-compose.yml"
-        target: "flight-app" # ✨ 타겟 폴더 지정 (없으면 자동 생성됨)
+        target: "/home/ubuntu/flight-app" # ✨ 타겟 폴더 지정 (없으면 자동 생성됨)
 
     # ✨ [수정됨] 서버에 접속하여 배포 실행
     - name: Deploy via SSH
@@ -74,7 +74,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           
           # ✨ 서버의 프로젝트 폴더로 이동 후 작업 시작
-          cd ~/flight-app
+          cd /home/ubuntu/flight-app
           
           docker pull $IMAGE_NAME_FRONTEND:latest
           docker pull $IMAGE_NAME_BACKEND:latest

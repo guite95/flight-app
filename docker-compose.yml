@@ -16,7 +16,7 @@ services:
     ports:
       - "127.0.0.1:8010:8010"
     volumes:
-      - ~/flight-data:/app/data
+      - ./data:/app/data
     networks:
       - flight-app
     restart: unless-stopped

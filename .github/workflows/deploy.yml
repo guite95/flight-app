@@ -84,7 +84,7 @@ jobs:
           export IMAGE_NAME_FRONTEND=$IMAGE_NAME_FRONTEND
           export IMAGE_NAME_BACKEND=$IMAGE_NAME_BACKEND
           
-          docker-compose down
-          docker-compose up -d
+          docker compose down
+          docker compose up -d
           
           docker image prune -f

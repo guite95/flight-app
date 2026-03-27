@@ -7,7 +7,7 @@ services:
     networks:
       - flight-app
     depends_on:
-      - backend
+      - flight-backend
     restart: unless-stopped
 
   flight-backend:
